@@ -6,6 +6,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import recepiesReducers from './states/recepiesSlice'
 import userSlice from './states/userSlice';
 import accountSlice from './states/accountsSlice' ; 
+import Image from './components/Image';
 const store = configureStore({
   reducer: { 
     recipe : recepiesReducers , 

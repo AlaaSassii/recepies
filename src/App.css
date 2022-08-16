@@ -1,3 +1,8 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0 ; 
+}
 /* recepies start */
 .recepies{
   display: grid;
@@ -6,3 +11,54 @@
 .recepies  img { 
   max-width: 100%;
 }
+
+/* recepies end */
+
+
+
+/* Sign Up Start */
+.SignUp { 
+  max-width: 100%;
+  height: 100vh;
+  padding: 100px 0 ; 
+  background-color: black;
+}
+.SignUp .container {
+  width: 80%;
+  margin:0 auto ; 
+  display: flex;
+  min-height: 80vh;
+}
+.SignUp .container .inputs  { 
+  flex-basis:80%;
+  position: relative;
+}
+.SignUp .container .inputs div { 
+  position: absolute;
+  top:30% ; 
+  left:50%; 
+  transform: translate(-50%);
+}
+.SignUp .container .inputs input  { 
+  display: block; 
+  height: 30px;
+  padding:0 5px  ; 
+  margin-bottom: 10px;
+  width: 400px;
+}
+.SignUp .image {
+  flex-basis:50%;
+  width: 100%;
+  margin-top: 10%;
+}
+
+.SignUp .image img { 
+  width: 100%;
+}
+
+
+.SignUp > div:last-child { 
+    
+}
+
+/* Sign Up End */

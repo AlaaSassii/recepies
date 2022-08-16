@@ -13,5 +13,5 @@ const accountSlice = createSlice({
     }
 })
 
-export const {addAccount} = accountSlice
+export const {addAccount} = accountSlice.actions
 export default accountSlice.reducer 
