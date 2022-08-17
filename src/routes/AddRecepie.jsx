@@ -3,11 +3,13 @@ import {useDispatch ,useSelector} from 'react-redux'
 import { useNavigate} from 'react-router-dom'
 import Navbar from '../components/Navbar';
 import { addRecepie } from '../states/recepiesSlice';
+
 const initialState = { 
     recepy: ''  , 
     description: '' ,
     imageofRecepy : '' , 
     paragraph : '' , 
+    id : new Date().getTime().toString()
 
 }
 
@@ -63,12 +65,6 @@ const AddRecepie = () => {
       }
     }, [image , preview]);  // => error with preview 
 
-
-
-
-
-
-
     // function button 
     const submit = (state) => {
       console.log(user)
@@ -78,19 +74,15 @@ const AddRecepie = () => {
             dispatch({type:'INTIALIZE'}) ; 
             navigate('/recepies')
         }
-       
     }
   return (
-    <div>
+    <>
         <Navbar/>
+        <div className='addRecepieCo'>
         <h1>Add a Recepie</h1>
         <input type="text" placeholder='Name of the recepie' onChange={(e) => dispatch({type: 'CHANGE_nameRecepie',payload:e.target.value})} />
        
         <input type="text" placeholder='recipie description and how to make it ' onChange={(e) => dispatch({type: 'CHANGE_description',payload:e.target.value})}/>
-
-        {/* <input type="file" name="" id=""  placeholder='add an image drag and drop an image' onChange={(e) => dispatch({type: 'CHANGE_image',payload:e.target.value})}/> */}
-
-        
         <input type="text" placeholder='notes' onChange={(e) =>dispatch({type: 'CHANGE_notes',payload:e.target.value}) }/>
         <div >
       <form>
@@ -128,8 +120,9 @@ const AddRecepie = () => {
         />
       </form>
         </div>
-        <button onClick={()=>{submit(state)}}>publish</button>
-    </div>
+        <button  className='submit' onClick={()=>{submit(state)}}>publish</button>
+        </div>
+    </>
   )
 }
 

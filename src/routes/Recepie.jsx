@@ -16,16 +16,32 @@ const Recepie = () => {
     console.log(one) 
     const {id ,name ,  email , imageofRecepy , paragraph , personImage , recepy } = one
     return (
-    <div>
+    <>
         <Navbar/>
-        <div>{name}</div>
-         <div>{email}</div>
-         <img src={imageofRecepy}/>
-        <div>{paragraph}</div>
-       <img src={personImage}/>
-        <div>{recepy}</div>
-        <button onClick={()=>navigate('/Signin')}>Log out</button>
-    </div>
+        <div className='recepiesCo'>
+          <div className='centerrecepies'>
+
+        <div className='image'>
+                <img src={imageofRecepy} alt="" />
+                </div>
+                <div className='person' >
+                <div className='image'>
+                <img src={personImage} alt=""  style={{width:'75px' , height:'75px'}}/>
+                </div>
+                <div>
+                <h6>{name}</h6>
+                <p>{email}</p>
+                </div>
+                </div>
+                <div className='info'>
+                <h4>{recepy}</h4>
+                <p>{paragraph}</p>
+                <button onClick={()=>navigate('/Signin')}>Log out</button>
+
+                </div>
+                </div>
+        </div>
+    </>
   )
 }
 

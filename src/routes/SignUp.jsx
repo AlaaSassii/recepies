@@ -73,8 +73,7 @@ const SignUp = () => {
     return (
     <div className='SignUp'>
         <div className='container'>
-        <div className='inputs'>
-        <div>
+    
         <input type="text" placeholder='name'    onChange={(e) => dispatch({type: 'NAME',payload:e.target.value})} />
         <input type="text" placeholder='email'  onChange={(e) => dispatch({type: 'EMAIL',payload:e.target.value})}/>
         {/* <input type="file" placeholder='image' onChange={(e) => dispatch({type: 'FILE',payload:e.target.value})} />  */}
@@ -91,7 +90,7 @@ const SignUp = () => {
             }}
           />
         ) : (
-          <button
+          <button className='file-btn'
             onClick={(event) => {
               event.preventDefault();
               fileInputRef.current.click();
@@ -118,13 +117,9 @@ const SignUp = () => {
         </div>
         {/* image End */}
 
-        <button onClick={()=>singup(state)} >Sign Up </button>
+        <button className='signup-btn' onClick={()=>singup(state)} >Sign Up </button>
         </div>
-        </div>
-        <div className='image'>
-            <img src="https://medias.toutelanutrition.com/ressource/104/Fast%20Food.jpg" alt="" />
-        </div>
-        </div>
+      
     </div>
   )
 }

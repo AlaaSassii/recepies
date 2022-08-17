@@ -3,62 +3,418 @@
   padding: 0;
   margin: 0 ; 
 }
-/* recepies start */
-.recepies{
-  display: grid;
-  grid-template-columns: repeat(auto-fill , minmax(300px ,1fr));
+
+:root{ 
+  --main-color: rgb(0, 255, 238)  ; 
+  --body-color : #232B2B ; 
 }
-.recepies  img { 
-  max-width: 100%;
+body{
+  background-color: var(--body-color);
 }
 
-/* recepies end */
 
 
 
 /* Sign Up Start */
 .SignUp { 
-  max-width: 100%;
-  height: 100vh;
-  padding: 100px 0 ; 
   background-color: black;
+  color: white;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .SignUp .container {
-  width: 80%;
-  margin:0 auto ; 
-  display: flex;
-  min-height: 80vh;
+  padding: 20px ;
 }
-.SignUp .container .inputs  { 
-  flex-basis:80%;
-  position: relative;
-}
-.SignUp .container .inputs div { 
-  position: absolute;
-  top:30% ; 
-  left:50%; 
-  transform: translate(-50%);
-}
-.SignUp .container .inputs input  { 
-  display: block; 
-  height: 30px;
-  padding:0 5px  ; 
+.SignUp .container >input {
+  display: block;
   margin-bottom: 10px;
   width: 400px;
+  padding:10px ; 
+  outline : none
 }
-.SignUp .image {
-  flex-basis:50%;
-  width: 100%;
-  margin-top: 10%;
+.file-btn{
+  background-color: deeppink;
+  color:white ;
+  border-radius: 10px;
+  padding: 10px ; 
+  width: 30%;
+  margin-bottom: 10px;
+
 }
-
-.SignUp .image img { 
-  width: 100%;
+.signup-btn{
+  background-color: var(--main-color); 
+  color:white ; 
+  padding: 10px ; 
+  border-radius: 20px;
+  width: 30%;
 }
-
-
-.SignUp > div:last-child { 
-    
+.SignUp img { 
+  max-width: 200px;
+  min-height: 200px;
+  object-fit: cover;
 }
-
 /* Sign Up End */
+
+
+/* Sign in Start */
+  .signin {
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .signin .container { 
+    padding: 20px ; 
+
+  }
+  .signin .container >input {
+        display: block;
+        margin-bottom: 10px;
+        width: 400px;
+        padding:10px ; 
+        outline : none
+
+  }
+  .signin .container > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .signin .container button { 
+    background-color: var(--main-color); 
+    color:white ; 
+    padding: 10px ; 
+    border-radius: 20px;
+    width: 30%;
+
+  }
+  .signin .container a {
+    color: var(--main-color)
+  }
+/* Sign in End */
+
+
+/* Navbar start */
+  nav{
+    position: fixed; 
+    top: 0 ;
+    left:0 ; 
+    background-color:   var(--body-color);
+    height: 100vh;
+    padding-top: 200px ;
+    width: 250px; 
+    color:white ;
+  }
+  nav > h1 {
+    position: absolute;
+    top : 5% ; 
+    left: 10%  ;
+    font-size: 40px;  
+  }
+  nav > h1 span { 
+    color: var(--main-color)
+  }
+  nav .person-data { 
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+
+  }
+  nav > div img { 
+    width: 75px ;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 50%;
+
+  }
+
+  nav > div> div  {
+    padding: 20px;
+  }
+  
+  nav > div> div> p {margin-bottom: 10px;}
+
+  nav ul { 
+    margin-top: 20px;
+    display: block;
+
+  }
+  nav ul li { 
+    display: block; 
+    margin-bottom: 10px;
+    padding:5px 0 5px 20px
+  }
+  nav ul a { 
+    font-size: 19px;
+    text-decoration: none;
+    color:white ; 
+
+  }
+  nav ul a span {
+    color:var(--main-color)
+  }
+
+  .FollowUs { 
+    position: absolute;
+    bottom : 5% ;
+    left:15% ; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;   
+    
+  }
+  .FollowUs > div:first-child { 
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .FollowUs  span {
+    margin: 0 5px;
+  }
+  .FollowUs > div:last-child{
+    display: flex;
+    align-items: center;
+  }
+  .FollowUs > div:last-child span:last-child {
+  }
+  @media(max-width:991px) { 
+    nav{
+      display: none;
+    }
+  }
+/* Navbar End */
+
+
+/* recepiesCo Start */
+  .recepiesCo{
+    width: calc(100vw - 300px);
+    position: absolute; 
+    top: 100px ;
+    right: 0 ; 
+    background-color: black;
+    z-index: 0; 
+    padding:50px ;
+    min-height: calc( 100vh - 5%);
+  }
+  @media (max-width:991px){
+  .recepiesCo{
+      width: 100%;
+      position: relative;
+    }
+  }
+  .recepiesCo input {
+    padding:5px 10px ; 
+    outline : none ; 
+    width: 80%;
+    margin-bottom: 20px;
+  }
+ /* recepies start */
+.recepies{
+  display: grid;
+  grid-template-columns: repeat(auto-fill , minmax(300px ,1fr));
+  grid-gap: 20px ;
+  color:white ; 
+}
+
+/* recepies end */
+.recepie{
+  overflow: hidden;
+}
+.recepie > .image { 
+  max-width: 100%;
+  height: 300px;
+  margin-bottom: 0;
+
+}
+.recepie .image img { 
+  width: 100%;
+  height: 100% ;
+}
+.recepie .person {
+  display: flex;
+  align-items: center;
+  width: 55%;
+  justify-content: space-between;
+  padding: 10px;
+}
+.recepie .person  > .image { 
+  width: 100px; 
+  height: 100px;
+  border-radius: 50% ;
+  padding: 0 20px 0 10px ;
+}
+@media(max-width:991px){
+  .recepie .person  > .image { 
+    width: 75px; 
+    height: 75px;
+    
+  }
+}
+.recepie .person   img { 
+  width: 100%; 
+  height: 100%;
+  border-radius: 50% ;
+}
+
+.recepie .person p { 
+  width: 100%; 
+  height: 100%;
+  border-radius: 50% ;
+  margin-bottom:5px ; 
+}
+
+.recepie .person div:last-child{
+
+}
+.recepie .info { 
+  background-color: white;
+  color:black ; 
+  padding: 10px ;
+  min-height: 200px;
+}
+.recepie .info h4 {
+  font-size: 30px  ; 
+  margin-bottom: 10px;
+}
+.recepie .info p {
+  margin-bottom: 10px;
+}
+.recepie .info .button {
+  display: flex;
+  
+}
+/* recepiesCo End */
+
+
+
+/* addRecepie Start */
+.addRecepieCo{
+  width: calc(100vw - 300px);
+  position: absolute; 
+  top: 100px ;
+  right: 0 ; 
+  background-color: black;
+  z-index: 0; 
+  padding:50px ;
+  min-height: calc( 100vh - 5%);
+  color:white
+}
+.addRecepieCo h1 { 
+  font-size: 35px;
+}
+.addRecepieCo input { 
+  margin-bottom: 10px;
+  display: block;
+  width: 80%;
+  padding:10px ;
+  outline: none ; 
+}
+.addRecepieCo button { 
+  background-color: deeppink;
+  color:white ;
+  border-radius: 10px;
+  padding: 10px ; 
+  width: 30%;
+  margin-bottom: 10px;
+}
+.addRecepieCo .submit { 
+  background-color: var(--main-color); 
+  color:white ; 
+  padding: 10px ; 
+  border-radius: 20px;
+  width: 30%;
+}
+.addRecepieCo img { 
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+/* addRecepir  End*/
+
+/* recepies  */
+.recepiesCo {
+  width: calc(100vw - 300px);
+  position: absolute; 
+  top: 100px ;
+  right: 0 ; 
+  background-color: black;
+  z-index: 0; 
+  padding:50px ;
+  min-height: calc( 100vh - 5%);
+  color:white
+}
+.recepiesCo .personImage ,.image-recepy { 
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+.recepiesCo button { 
+  background-color: deeppink;
+  color:white ;
+  border-radius: 10px;
+  padding: 10px ; 
+  width: 30%;
+  margin-bottom: 10px;
+}
+
+.centerrecepies{
+  margin: 100px  300px;
+}
+
+.centerrecepies > .image  { 
+width: 400px;
+height: 290px;  
+}
+.recepiesCo .image img { 
+  width: 100%;
+
+}
+.recepiesCo .person {
+  display: flex;
+  align-items: center;
+  width: 30%;
+  justify-content: space-between;
+}
+.recepiesCo .person  > .image { 
+  width: 100px;
+  height: 100px ; 
+  
+}
+@media(max-width:991px){
+
+}
+.recepiesCo .person   img { 
+  width:  75px;
+  height: 75px ; 
+  border-radius: 50%;
+}
+
+.recepiesCo .person p { 
+  
+}
+
+.recepiesCo .person div:last-child{
+
+}
+.recepiesCo .info { 
+
+}
+.recepiesCo .info h4 {
+
+}
+.recepiesCo .info p {
+
+}
+.recepiesCo .info .button {
+
+}
+
+/* recepies  */

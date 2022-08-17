@@ -7,6 +7,7 @@ import recepiesReducers from './states/recepiesSlice'
 import userSlice from './states/userSlice';
 import accountSlice from './states/accountsSlice' ; 
 import Image from './components/Image';
+import Navbar from './components/Navbar';
 const store = configureStore({
   reducer: { 
     recipe : recepiesReducers , 

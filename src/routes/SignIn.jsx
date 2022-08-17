@@ -22,6 +22,7 @@ const reducer = (state ,action) => {
 const SignIn = () => {
   const dispatchRedux = useDispatch() ; 
   let navigate = useNavigate() ; 
+  const user = useSelector(state => state.user.value)
   const [state , dispatch] = useReducer(reducer ,intialState) ;
 
   const accounts = useSelector(state => state.accounts.value)
@@ -46,18 +47,23 @@ const SignIn = () => {
       }
     }
     useEffect(()=> { 
-      dispatchRedux(logOut)
+      dispatchRedux(logOut()) ;
+      console.log(user)
     },[])
   return (
-    <div>
+    <div className='signin'>
+    <div className='container'>
         <input type="text" placeholder='email' 
         onChange={(e) => dispatch({type: 'EMAIL',payload:e.target.value})}
         />
         <input type="password" placeholder='password' 
         onChange={(e) => dispatch({type: 'PASSWORD',payload:e.target.value})}
         />
+        <div >
         <button onClick={SigninComplet}>Sign in </button>
         <p>don't have account <Link to="/SignUp"> Sign Up</Link> </p>
+      </div>
+    </div>
     </div>
   )
 }
