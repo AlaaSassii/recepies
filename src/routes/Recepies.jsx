@@ -17,6 +17,8 @@ const Recepies = () => {
     },[])
   return (
     < >
+        <h1 className='logo'>Dashbored<span>.</span></h1>
+
         <Navbar/>
         <h3>Recepies</h3>
 

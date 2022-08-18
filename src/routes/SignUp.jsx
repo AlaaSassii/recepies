@@ -53,7 +53,7 @@ const SignUp = () => {
 
     // sign in and sign up log out by default 
     useEffect(()=> { 
-        dispatchRedux(logOut)
+        dispatchRedux(logOut())
     },[])
 
     // image file 

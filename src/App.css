@@ -3,13 +3,22 @@
   padding: 0;
   margin: 0 ; 
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cairo:wght@300;400;600;800&family=Lato&family=Signika+Negative:wght@400;500&family=Work+Sans:ital,wght@0,500;0,600;1,500;1,600&display=swap');
 :root{ 
   --main-color: rgb(0, 255, 238)  ; 
-  --body-color : #232B2B ; 
+  --body-color : #0a0a0a ; 
+}
+button { 
+  border : none ; 
+  outline : none ; 
 }
 body{
   background-color: var(--body-color);
+  font-family: 'Archivo Black', sans-serif;
+font-family: 'Cairo', sans-serif;
+font-family: 'Lato', sans-serif;
+font-family: 'Signika Negative', sans-serif;
+font-family: 'Work Sans', sans-serif;
 }
 
 
@@ -110,6 +119,18 @@ body{
     padding-top: 200px ;
     width: 250px; 
     color:white ;
+    z-index: 150;
+  }
+  .hide-nav{
+    left: -250px;
+  }
+  .show-nav{
+    left: 0;
+  }
+  @media  (min-width:991px) {
+    .hide-nav{
+      left: 0;
+    }
   }
   nav > h1 {
     position: absolute;
@@ -187,9 +208,24 @@ body{
   }
   @media(max-width:991px) { 
     nav{
-      display: none;
+      left: -250px;
     }
   }
+  .button-nav{
+    background-color: red;
+    width: 100%;
+    padding:0 ;
+    top: 0 ; 
+    left:0 ; 
+    position: absolute;
+    justify-content: space-between;
+    z-index: 200;
+    display: none;
+  }
+  @media(max-width:991px) { 
+    .button-nav{
+      display: flex;
+    }}
 /* Navbar End */
 
 
@@ -253,12 +289,17 @@ body{
 }
 @media(max-width:991px){
   .recepie .person  > .image { 
-    width: 75px; 
-    height: 75px;
+    width: 50px; 
+    height: 50px;
     
   }
+  .recepie .person{
+  width: 75%;
+  margin-bottom:20px;
+
+  }
 }
-.recepie .person   img { 
+.recepie .person > .image  img { 
   width: 100%; 
   height: 100%;
   border-radius: 50% ;
@@ -287,9 +328,12 @@ body{
 .recepie .info p {
   margin-bottom: 10px;
 }
-.recepie .info .button {
+.recepie .info button {
   display: flex;
-  
+  background-color: rgb(186, 0, 0);
+  padding:5px 10px ; 
+  border:none ; 
+  color:white
 }
 /* recepiesCo End */
 
@@ -307,6 +351,13 @@ body{
   min-height: calc( 100vh - 5%);
   color:white
 }
+@media (max-width:991px){
+  .addRecepieCo{
+      width: 100%;
+      height: calc(100vh - 5%);
+      position: relative;
+    }
+  }
 .addRecepieCo h1 { 
   font-size: 35px;
 }
@@ -339,8 +390,8 @@ body{
 }
 /* addRecepir  End*/
 
-/* recepies  */
-.recepiesCo {
+/* recepie */
+.recepieCo  {
   width: calc(100vw - 300px);
   position: absolute; 
   top: 100px ;
@@ -348,73 +399,113 @@ body{
   background-color: black;
   z-index: 0; 
   padding:50px ;
-  min-height: calc( 100vh - 5%);
-  color:white
-}
-.recepiesCo .personImage ,.image-recepy { 
-  width: 300px;
-  height: 200px;
-  object-fit: cover;
-}
-.recepiesCo button { 
-  background-color: deeppink;
-  color:white ;
-  border-radius: 10px;
-  padding: 10px ; 
-  width: 30%;
-  margin-bottom: 10px;
-}
+  min-height: calc( 100vh - 5%); 
+  color:white  ;
+ }
 
-.centerrecepies{
-  margin: 100px  300px;
-}
+@media (max-width:991px){
+.recepieCo{
+    width: 100%;
+    position: relative;
 
-.centerrecepies > .image  { 
-width: 400px;
-height: 290px;  
+  }
 }
-.recepiesCo .image img { 
+.recepieCo  .centerrecepies{ 
+  width: 50%;
+  margin: 100px auto ;
+
+}
+@media (max-width:991px){
+  .recepieCo  .centerrecepies{ 
+    width:90%;
+  }
+  }
+.recepieCo .image{
+  width: 100%;
+ }
+.recepieCo .image img{
   width: 100%;
 
-}
-.recepiesCo .person {
+ }
+.recepieCo .person {
+  width: 30%;
   display: flex;
   align-items: center;
-  width: 30%;
   justify-content: space-between;
-}
-.recepiesCo .person  > .image { 
-  width: 100px;
-  height: 100px ; 
+ }
+@media (max-width:991px){
+  .recepieCo .person {
+    width:65%;
+    margin-bottom: 30px;
+  align-items: center;
+
+   }
+  }
+.recepieCo .person >.image{
+  width: 75px;
+  height: 75px;
+ }
+ @media (max-width:991px){
+  .recepieCo .person >.image{
+    width: 50px;
+    height: 50px;
+   }
+  }
+.recepieCo .person >.image img {
+height: 100%;
+width:100% ; 
+border-radius: 50%;
+ }
+.recepieCo  .person > div {
+ }
+.recepieCo .person > div h6 {
+  font-size: 22px;
+ }
+.recepieCo .person > div p{
+  font-size: 19px;
+
+ }
+ @media (max-width:991px){
+  .recepieCo .person > div h6 {
+    font-size: 18px;
+   }
+  .recepieCo .person > div p{
+    font-size: 15px;
   
-}
-@media(max-width:991px){
+   }
+  }
+.recepieCo .info { 
+  background-color: white;
+  padding:5px 10px ;
+  color:black; 
+  min-height: 100px;
 
 }
-.recepiesCo .person   img { 
-  width:  75px;
-  height: 75px ; 
-  border-radius: 50%;
+.recepieCo .info h4 {
+  font-size: 25px;
+  padding: 5px;
+ }
+.recepieCo .info p { 
+  line-height: 1.4;
 }
+.recepieCo .info button{
+  float: right;
+ }
 
-.recepiesCo .person p { 
-  
-}
 
-.recepiesCo .person div:last-child{
-
-}
-.recepiesCo .info { 
-
-}
-.recepiesCo .info h4 {
-
-}
-.recepiesCo .info p {
-
-}
-.recepiesCo .info .button {
-
-}
 
 /* recepies  */
+
+/* logo */
+.logo { 
+  position: absolute;
+  top : 5% ; 
+  left: 1.9%  ;
+  font-size: 40px; 
+  color:white ; 
+}
+
+.logo span { 
+  color: var(--main-color)
+}
+/* logo end */

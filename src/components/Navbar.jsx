@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{useState} from 'react'
 import {useSelector , useDispatch} from 'react-redux' 
 import { Link } from 'react-router-dom'
 import { logOut } from '../states/userSlice'
@@ -8,12 +8,17 @@ const Navbar = () => {
   const {name ,email ,  personImage} = useSelector(state => state.user.value)
   // console.log('navbar_imageUser:' , personImage)
   // redux
+  const [toggle,setToggle] = useState(false)
   const dispatch = useDispatch() ; 
   return (
-    <nav>
+    <>
+    <div className='button-nav'>
+      <div onClick={()=>setToggle(!toggle)}>{toggle ? 'add' : 'X'}</div>
+    </div>
+    <nav className={toggle ? 'show-nav' : 'hide-nav'}>
         <h1>Dashbored<span>.</span></h1>
        
-          <div className='person-data'>
+          <div className='person-data '>
             <img src={personImage} alt="image" />
             <div>
             <p>{name}</p>
@@ -41,6 +46,7 @@ const Navbar = () => {
           </div>
         </div>
     </nav>
+    </>
   )
 }
 

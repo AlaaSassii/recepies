@@ -77,6 +77,8 @@ const AddRecepie = () => {
     }
   return (
     <>
+        <h1 className='logo'>Dashbored<span>.</span></h1>
+
         <Navbar/>
         <div className='addRecepieCo'>
         <h1>Add a Recepie</h1>

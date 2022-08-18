@@ -17,8 +17,10 @@ const Recepie = () => {
     const {id ,name ,  email , imageofRecepy , paragraph , personImage , recepy } = one
     return (
     <>
+        <h1 className='logo'>Dashbored<span>.</span></h1>
+
         <Navbar/>
-        <div className='recepiesCo'>
+        <div className='recepieCo'>
           <div className='centerrecepies'>
 
         <div className='image'>
@@ -36,7 +38,6 @@ const Recepie = () => {
                 <div className='info'>
                 <h4>{recepy}</h4>
                 <p>{paragraph}</p>
-                <button onClick={()=>navigate('/Signin')}>Log out</button>
 
                 </div>
                 </div>
